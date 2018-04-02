@@ -99,7 +99,7 @@
     {
       "text": "%sql \nselect age, count(1) value\nfrom bank \nwhere age \u003c 30 \ngroup by age \norder by age",
       "user": "anonymous",
-      "dateUpdated": "2018-04-02 21:51:04.378",
+      "dateUpdated": "2018-04-02 21:58:40.654",
       "config": {
         "colWidth": 4.0,
         "results": [
@@ -169,7 +169,7 @@
     {
       "text": "%sql \nselect age, count(1) value \nfrom bank \nwhere age \u003c ${maxAge\u003d30} \ngroup by age \norder by age",
       "user": "anonymous",
-      "dateUpdated": "2018-04-02 21:51:04.516",
+      "dateUpdated": "2018-04-02 21:58:40.783",
       "config": {
         "colWidth": 4.0,
         "results": [
@@ -248,7 +248,7 @@
     {
       "text": "%sql \nselect age, count(1) value \nfrom bank \nwhere marital\u003d\"${marital\u003dsingle,single|divorced|married}\" \ngroup by age \norder by age",
       "user": "anonymous",
-      "dateUpdated": "2018-04-02 21:51:04.640",
+      "dateUpdated": "2018-04-02 21:58:40.882",
       "config": {
         "colWidth": 4.0,
         "results": [
@@ -501,18 +501,57 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%md\n* boom2",
+      "user": "steven.yvineckruyk",
+      "dateUpdated": "2018-04-02 21:58:48.331",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003eboom2\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522705572592_-1774645768",
+      "id": "20180402-214612_961654497",
+      "dateCreated": "2018-04-02 21:46:12.592",
+      "dateStarted": "2018-04-02 21:58:48.351",
+      "dateFinished": "2018-04-02 21:58:51.036",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%md\n",
       "user": "steven.yvineckruyk",
-      "dateUpdated": "2018-04-02 21:46:12.593",
+      "dateUpdated": "2018-04-02 21:58:48.228",
       "config": {},
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1522705572592_-1774645768",
-      "id": "20180402-214612_961654497",
-      "dateCreated": "2018-04-02 21:46:12.592",
+      "jobName": "paragraph_1522706328221_-198169214",
+      "id": "20180402-215848_1592499171",
+      "dateCreated": "2018-04-02 21:58:48.221",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
