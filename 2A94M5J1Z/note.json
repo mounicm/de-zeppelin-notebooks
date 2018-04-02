@@ -51,6 +51,22 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%md\n",
+      "user": "steven.yvineckruyk",
+      "dateUpdated": "2018-04-02 22:08:32.131",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1522706912130_-266174769",
+      "id": "20180402-220832_307165758",
+      "dateCreated": "2018-04-02 22:08:32.130",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "title": "Load data into table",
       "text": "import org.apache.commons.io.IOUtils\nimport java.net.URL\nimport java.nio.charset.Charset\n\n// Zeppelin creates and injects sc (SparkContext) and sqlContext (HiveContext or SqlContext)\n// So you don\u0027t need create them manually\n\n// load bank data\nval bankText \u003d sc.parallelize(\n    IOUtils.toString(\n        new URL(\"https://s3.amazonaws.com/apache-zeppelin/tutorial/bank/bank.csv\"),\n        Charset.forName(\"utf8\")).split(\"\\n\"))\n\ncase class Bank(age: Integer, job: String, marital: String, education: String, balance: Integer)\n\nval bank \u003d bankText.map(s \u003d\u003e s.split(\";\")).filter(s \u003d\u003e s(0) !\u003d \"\\\"age\\\"\").map(\n    s \u003d\u003e Bank(s(0).toInt, \n            s(1).replaceAll(\"\\\"\", \"\"),\n            s(2).replaceAll(\"\\\"\", \"\"),\n            s(3).replaceAll(\"\\\"\", \"\"),\n            s(5).replaceAll(\"\\\"\", \"\").toInt\n        )\n).toDF()\nbank.registerTempTable(\"bank\")",
       "user": "anonymous",
@@ -99,7 +115,7 @@
     {
       "text": "%sql \nselect age, count(1) value\nfrom bank \nwhere age \u003c 30 \ngroup by age \norder by age",
       "user": "anonymous",
-      "dateUpdated": "2018-04-02 21:58:40.654",
+      "dateUpdated": "2018-04-02 22:12:00.534",
       "config": {
         "colWidth": 4.0,
         "results": [
@@ -169,7 +185,7 @@
     {
       "text": "%sql \nselect age, count(1) value \nfrom bank \nwhere age \u003c ${maxAge\u003d30} \ngroup by age \norder by age",
       "user": "anonymous",
-      "dateUpdated": "2018-04-02 21:58:40.783",
+      "dateUpdated": "2018-04-02 22:12:00.666",
       "config": {
         "colWidth": 4.0,
         "results": [
@@ -248,7 +264,7 @@
     {
       "text": "%sql \nselect age, count(1) value \nfrom bank \nwhere marital\u003d\"${marital\u003dsingle,single|divorced|married}\" \ngroup by age \norder by age",
       "user": "anonymous",
-      "dateUpdated": "2018-04-02 21:58:40.882",
+      "dateUpdated": "2018-04-02 22:12:00.781",
       "config": {
         "colWidth": 4.0,
         "results": [
@@ -503,7 +519,7 @@
     {
       "text": "%md\n* boom2",
       "user": "steven.yvineckruyk",
-      "dateUpdated": "2018-04-02 21:58:48.331",
+      "dateUpdated": "2018-04-02 22:12:15.367",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -514,8 +530,8 @@
           "editOnDblClick": true
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": false,
+        "tableHide": true
       },
       "settings": {
         "params": {},
@@ -540,18 +556,57 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%md\n* boom3",
+      "user": "steven.yvineckruyk",
+      "dateUpdated": "2018-04-02 22:12:22.685",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003eboom3\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1522706328221_-198169214",
+      "id": "20180402-215848_1592499171",
+      "dateCreated": "2018-04-02 21:58:48.221",
+      "dateStarted": "2018-04-02 22:12:22.692",
+      "dateFinished": "2018-04-02 22:12:25.340",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%md\n",
       "user": "steven.yvineckruyk",
-      "dateUpdated": "2018-04-02 21:58:48.228",
+      "dateUpdated": "2018-04-02 22:12:22.623",
       "config": {},
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1522706328221_-198169214",
-      "id": "20180402-215848_1592499171",
-      "dateCreated": "2018-04-02 21:58:48.221",
+      "jobName": "paragraph_1522707142618_-1267551393",
+      "id": "20180402-221222_1160728704",
+      "dateCreated": "2018-04-02 22:12:22.618",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
